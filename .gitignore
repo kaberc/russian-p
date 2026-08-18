@@ -1,0 +1,17 @@
+# Build output — regenerate with ./build.sh
+build/
+
+# Downloaded reference material — regenerate with ./tools/fetch-reference.sh
+reference/vendor/
+
+# Python bytecode from the tools/
+__pycache__/
+
+# Agent tooling, not part of this project
+.codegraph
+.omo/
+
+# macOS cruft
+.DS_Store
+._*
+__MACOSX/

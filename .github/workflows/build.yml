@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install XML validator
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libxml2-utils
+
+      - name: Fetch pinned reference files
+        run: ./tools/fetch-reference.sh
+
+      - name: Build keyboard layout
+        run: ./build.sh
+
+      - name: Render layout preview
+        run: ./tools/preview-layout.py
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: russian-us-punctuation-${{ github.sha }}
+          path: |
+            build/Russian US Punctuation.bundle.zip
+            build/preview.svg
+          if-no-files-found: error

@@ -8,7 +8,7 @@ The layout is designed to work well on both conventional keyboards and
 programmable, non-standard boards such as the Moonlander. It does not depend on
 full-size row lengths or punctuation keys being in fixed physical positions.
 
-[![Russian (U.S. Punctuation) keyboard layout preview](https://github.com/kaberc/russian-p/releases/latest/download/Russian.US.Punctuation.preview.svg)](https://github.com/kaberc/russian-p/releases/latest)
+[![Russian (U.S. Punctuation) keyboard layout preview](docs/preview.svg)](https://github.com/kaberc/russian-p/releases/latest)
 
 ## Features
 

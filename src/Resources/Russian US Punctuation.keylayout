@@ -272,16 +272,16 @@
         <keyMap index="2">
             <key code="0" output="ƒ"/>
             <key code="1" action="acu_y_lc"/>
-            <key code="2" output="ћ"/>
+            <key code="2" output="б"/>
             <key code="3" output="÷"/>
             <key code="4" output="₽"/>
             <key code="5" output="©"/>
             <key code="6" output="ђ"/>
             <key code="7" output="≈"/>
-            <key code="8" output="≠"/>
+            <key code="8" output="ћ"/>
             <key code="9" output="µ"/>
             <key code="10" output="§"/>
-            <key code="11" output="б"/>
+            <key code="11" output="∫"/>
             <key code="12" output="ј"/>
             <key code="13" output="џ"/>
             <key code="14" action="dkAcute"/>
@@ -381,16 +381,16 @@
         <keyMap index="3">
             <key code="0" output="ƒ"/>
             <key code="1" action="acu_y_uc"/>
-            <key code="2" output="Ћ"/>
+            <key code="2" output="Б"/>
             <key code="3" output="÷"/>
             <key code="4" output="₽"/>
             <key code="5" output="©"/>
             <key code="6" output="Ђ"/>
             <key code="7" output="≈"/>
-            <key code="8" output="≠"/>
+            <key code="8" output="Ћ"/>
             <key code="9" output="µ"/>
             <key code="10" output="±"/>
-            <key code="11" output="Б"/>
+            <key code="11" output="ı"/>
             <key code="12" output="Ј"/>
             <key code="13" output="Џ"/>
             <key code="14" output="&#x0301;"/>
@@ -926,16 +926,16 @@
         <keyMap index="8">
             <key code="0" output="ƒ"/>
             <key code="1" action="acu_y_uc"/>
-            <key code="2" output="Ћ"/>
+            <key code="2" output="Б"/>
             <key code="3" output="÷"/>
             <key code="4" output="₽"/>
             <key code="5" output="©"/>
             <key code="6" output="Ђ"/>
             <key code="7" output="≈"/>
-            <key code="8" output="≠"/>
+            <key code="8" output="Ћ"/>
             <key code="9" output="µ"/>
             <key code="10" output="§"/>
-            <key code="11" output="Б"/>
+            <key code="11" output="∫"/>
             <key code="12" output="Ј"/>
             <key code="13" output="Џ"/>
             <key code="14" action="dkAcute"/>

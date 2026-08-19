@@ -147,8 +147,8 @@
 <rect x="457" y="310" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="472" y="350" font-size="31" fill="#0b5cad">В</text>
 <text x="472" y="405" font-size="31" fill="#0b5cad">в</text>
-<text x="554" y="348" font-size="24" fill="#5b8ec4" text-anchor="end">Ћ</text>
-<text x="554" y="404" font-size="24" fill="#5b8ec4" text-anchor="end">ћ</text>
+<text x="554" y="348" font-size="24" fill="#5b8ec4" text-anchor="end">Б</text>
+<text x="554" y="404" font-size="24" fill="#5b8ec4" text-anchor="end">б</text>
 <rect x="573" y="310" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="588" y="350" font-size="31" fill="#0b5cad">А</text>
 <text x="588" y="405" font-size="31" fill="#0b5cad">а</text>
@@ -201,7 +201,8 @@
 <rect x="515" y="426" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="530" y="466" font-size="31" fill="#0b5cad">С</text>
 <text x="530" y="521" font-size="31" fill="#0b5cad">с</text>
-<text x="612" y="520" font-size="24" fill="#5b8ec4" text-anchor="end">≠</text>
+<text x="612" y="464" font-size="24" fill="#5b8ec4" text-anchor="end">Ћ</text>
+<text x="612" y="520" font-size="24" fill="#5b8ec4" text-anchor="end">ћ</text>
 <rect x="631" y="426" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="646" y="466" font-size="31" fill="#0b5cad">М</text>
 <text x="646" y="521" font-size="31" fill="#0b5cad">м</text>
@@ -209,8 +210,8 @@
 <rect x="747" y="426" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="762" y="466" font-size="31" fill="#0b5cad">И</text>
 <text x="762" y="521" font-size="31" fill="#0b5cad">и</text>
-<text x="844" y="464" font-size="24" fill="#5b8ec4" text-anchor="end">Б</text>
-<text x="844" y="520" font-size="24" fill="#5b8ec4" text-anchor="end">б</text>
+<text x="844" y="464" font-size="24" fill="#5b8ec4" text-anchor="end">ı</text>
+<text x="844" y="520" font-size="24" fill="#5b8ec4" text-anchor="end">∫</text>
 <rect x="863" y="426" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="878" y="466" font-size="31" fill="#0b5cad">Т</text>
 <text x="878" y="521" font-size="31" fill="#0b5cad">т</text>

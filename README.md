@@ -62,6 +62,10 @@ files first:
 Reference downloads are hash-verified and are never fetched by `build.sh`, so
 ordinary builds remain offline.
 
+Released archives are not built locally. Pushing a `v*` tag runs the same
+`build.sh` on GitHub Actions, and the assets on the releases page come from
+that build of the tagged commit.
+
 ## Preview
 
 The SVG overview at the top of this page is generated. Refresh it after a

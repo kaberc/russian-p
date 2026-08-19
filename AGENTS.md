@@ -29,6 +29,15 @@ or fixed punctuation-key placement.
 - URLs and hashes are pinned in `reference/sources.env`.
 - Builds must remain offline; do not fetch references from `build.sh`.
 
+## Releases
+
+- Cut a release by pushing an annotated `v*` tag. GitHub Actions builds the
+  tagged commit and uploads the assets; never upload them by hand.
+- The tag message becomes the release notes, so write them there:
+  `git tag -a v1.2.0 -F notes.md`. A bare version string yields empty notes.
+- Bump `CFBundleShortVersionString`, `CFBundleVersion` and `SourceVersion` under
+  `src/` when the layout changes, so macOS sees a new bundle version.
+
 ## Layout invariants
 
 - Keep XML 1.1: control-character references used by special keys require it.

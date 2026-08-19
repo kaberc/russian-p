@@ -16,7 +16,9 @@ import xml.etree.ElementTree as ET
 
 XML_NAME = re.compile(r'^[A-Za-z_:][-A-Za-z0-9_:.]*$')
 C0_REF = re.compile(r'&#x00([01][0-9A-Fa-f]);', re.I)
-DTD = pathlib.Path(__file__).resolve().parent.parent / 'reference' / 'vendor' / 'KeyboardLayout.dtd'
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+DTD = ROOT / 'reference' / 'vendor' / 'KeyboardLayout.dtd'
+LAYOUT = ROOT / 'src' / 'Resources' / 'Russian US Punctuation.keylayout'
 
 
 def normalize(raw):
@@ -151,9 +153,9 @@ def check(kb):
 
 
 def main():
-    if len(sys.argv) != 2:
-        sys.exit('usage: check-keylayout.py FILE.keylayout')
-    path = sys.argv[1]
+    if len(sys.argv) > 2:
+        sys.exit('usage: check-keylayout.py [FILE.keylayout]')
+    path = sys.argv[1] if len(sys.argv) == 2 else LAYOUT
     try:
         normalized, kb = parse(path)
     except ET.ParseError as exc:

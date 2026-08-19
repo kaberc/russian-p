@@ -27,19 +27,10 @@ done
 # macOS installs malformed layouts without complaint; fail here instead
 python3 tools/check-keylayout.py "${out}/Contents/Resources/${name}.keylayout"
 
-# archive for transfer to a Mac; zip(1) is absent on some Linux boxes
-if command -v zip >/dev/null; then
-	(cd build && zip -qr "${name}.bundle.zip" "${name}.bundle")
-else
-	python3 - "$name" <<'PY'
-import pathlib, sys, zipfile
-name = sys.argv[1]
-root = pathlib.Path('build')
-with zipfile.ZipFile(root / f'{name}.bundle.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-    for path in sorted((root / f'{name}.bundle').rglob('*')):
-        z.write(path, path.relative_to(root))
-PY
-fi
+# archive for transfer to a Mac. This script runs on CI and on macOS, which
+# both have zip(1); Ubuntu server and minimal images do not ship it by default.
+(cd build && zip -qr "${name}.bundle.zip" "${name}.bundle")
+
 printf 'built  %s\n       build/%s.bundle.zip\n' "$out" "$name"
 
 cat <<EOF

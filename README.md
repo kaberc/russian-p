@@ -64,11 +64,19 @@ ordinary builds remain offline.
 
 ## Preview
 
-Generate an SVG overview of the keyboard layers with:
+The SVG overview at the top of this page is generated. Refresh it after a
+layout change with:
 
 ```sh
 ./tools/preview-layout.py
 ```
 
-The preview is written to `build/preview.svg`. GitHub Actions also publishes
-the bundle ZIP and preview as artifacts for every push and pull request.
+It rewrites `docs/preview.svg`; commit that with the layout change, as the
+build workflow fails on a stale copy. Validate a layout on its own with:
+
+```sh
+./tools/check-keylayout.py
+```
+
+GitHub Actions also publishes the bundle ZIP and preview as artifacts for every
+push and pull request.

@@ -3,10 +3,12 @@
 - `src/` is the source of truth and mirrors the bundle's `Contents/` directory.
 - Edit `src/Resources/Russian US Punctuation.keylayout`; never edit files under
   `build/`.
-- Run `./build.sh` after changes. It validates the layout and produces
-  `build/Russian US Punctuation.bundle` plus
-  `build/Russian US Punctuation.bundle.zip`.
-- Generate a visual check with `./tools/preview-layout.py`.
+- After a layout change run `./tools/check-keylayout.py` to validate it, then
+  `./tools/preview-layout.py` to refresh the committed `docs/preview.svg` that
+  the README embeds. Commit that refresh; CI fails when the preview is stale.
+- Develop and check here; do not build here. `./build.sh` assembles, validates
+  and packages the bundle, and GitHub Actions runs it on every push. A local
+  build is not useful on Linux, where the result cannot be installed or typed on.
 
 ## Project goal
 

@@ -6,8 +6,13 @@ Option pair down the right in a lighter colour. Option glyphs that merely repeat
 the layer below them are dropped, so only the ones that add a character show up.
 """
 import argparse
+import pathlib
 import re
 import xml.etree.ElementTree as ET
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+LAYOUT = ROOT / 'src' / 'Resources' / 'Russian US Punctuation.keylayout'
+PREVIEW = ROOT / 'docs' / 'preview.svg'
 
 C0_REF = re.compile(r'&#x00([01][0-9A-Fa-f]);', re.IGNORECASE)
 
@@ -167,14 +172,12 @@ def render(kb, title):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('keylayout', nargs='?',
-                    default='src/Resources/Russian US Punctuation.keylayout')
-    ap.add_argument('-o', '--output', default='build/preview.svg')
+    ap.add_argument('keylayout', nargs='?', default=LAYOUT)
+    ap.add_argument('-o', '--output', default=PREVIEW)
     args = ap.parse_args()
 
     kb = load(args.keylayout)
-    svg = render(kb, kb.get('name') or args.keylayout)
-    import pathlib
+    svg = render(kb, kb.get('name') or str(args.keylayout))
     out = pathlib.Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(svg, encoding='utf-8')

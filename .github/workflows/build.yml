@@ -26,8 +26,14 @@ jobs:
       - name: Build keyboard layout
         run: ./build.sh
 
-      - name: Render layout preview
-        run: ./tools/preview-layout.py
+      - name: Check the committed preview matches the layout
+        run: |
+          ./tools/preview-layout.py
+          if ! git diff --quiet -- docs/preview.svg; then
+            echo '::error file=docs/preview.svg::stale preview; run ./tools/preview-layout.py and commit docs/preview.svg'
+            git diff -- docs/preview.svg
+            exit 1
+          fi
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -35,5 +41,5 @@ jobs:
           name: russian-us-punctuation-${{ github.sha }}
           path: |
             build/Russian US Punctuation.bundle.zip
-            build/preview.svg
+            docs/preview.svg
           if-no-files-found: error

@@ -46,5 +46,3 @@ or fixed punctuation-key placement.
   `maxout` value.
 - Preserve Apple ABC punctuation on the base/Shift layers and reachability of all
   33 Russian letters. Option+E is the acute dead key for Russian stress marks.
-- If macOS is unavailable, report that installation and live typing were not
-  tested; validators and previews are not substitutes for that final check.

@@ -1,20 +1,20 @@
-# Russian (U.S. Punctuation)
+# Russian – U.S. Punctuation
 
-Russian (U.S. Punctuation) is a Russian-English macOS keyboard layout built
-around standard U.S. key positions. It keeps familiar punctuation on the base
-and Shift layers while placing all 33 Russian letters within easy reach.
+Russian – U.S. Punctuation is a macOS keyboard layout for typing Russian. It
+places all 33 Russian letters within easy reach and leaves punctuation on the
+base and Shift layers where the standard U.S. layout puts it.
 
-The layout is designed to work well on both conventional keyboards and
-programmable, non-standard boards such as the Moonlander. It does not depend on
-full-size row lengths or punctuation keys being in fixed physical positions.
+The layout suits conventional keyboards and programmable boards such as the
+Moonlander equally, including boards with shorter rows or punctuation keys in
+different physical positions.
 
-[![Russian (U.S. Punctuation) keyboard layout preview](docs/preview.svg)](https://github.com/kaberc/russian-p/releases/latest)
+[![Russian – U.S. Punctuation keyboard layout preview](docs/preview.svg)](https://github.com/kaberc/russian-p/releases/latest)
 
 ## Features
 
 - U.S./ABC punctuation on the base and Shift layers.
 - All 33 Russian letters.
-- Latin and Cyrillic input in one layout.
+- Latin letters on the `Command` layer, so `⌘C` and `⌘V` keep their U.S. keys.
 - `Option`+`E` acute dead key for Russian stress marks.
 - Localized English and Russian display names.
 - No static icon, allowing macOS to use its generic keyboard-layout icon.
@@ -25,15 +25,23 @@ full-size row lengths or punctuation keys being in fixed physical positions.
    [latest release](https://github.com/kaberc/russian-p/releases/latest).
 2. Extract the archive.
 3. Copy `Russian US Punctuation.bundle` to `~/Library/Keyboard Layouts/`.
-4. Log out of macOS and log back in.
-5. Open **System Settings → Keyboard → Text Input → Input Sources**, then add
-   **Russian (U.S. Punctuation)**.
+4. Clear the quarantine flag the browser set on the download. macOS refuses to
+   register a quarantined layout:
+
+   ```sh
+   xattr -dr com.apple.quarantine "$HOME/Library/Keyboard Layouts/Russian US Punctuation.bundle"
+   ```
+
+5. Log out of macOS and log back in.
+6. Open **System Settings → Keyboard → Text Input → Input Sources**, then add
+   **Russian – U.S. Punctuation**.
 
 To install from Terminal after extracting the archive:
 
 ```sh
 mkdir -p "$HOME/Library/Keyboard Layouts"
 cp -R "Russian US Punctuation.bundle" "$HOME/Library/Keyboard Layouts/"
+xattr -dr com.apple.quarantine "$HOME/Library/Keyboard Layouts/Russian US Punctuation.bundle"
 ```
 
 ## Build

@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LAYOUT = ROOT / 'src' / 'Resources' / 'Russian US Punctuation.keylayout'
 PREVIEW = ROOT / 'docs' / 'preview.svg'
+STRINGS = ROOT / 'src' / 'Resources' / 'en.lproj' / 'InfoPlist.strings'
 
 C0_REF = re.compile(r'&#x00([01][0-9A-Fa-f]);', re.IGNORECASE)
 
@@ -170,6 +171,18 @@ def render(kb, title):
     return '\n'.join(parts)
 
 
+def display_name(internal):
+    # The keyboard's name is an identifier -- it must match the file stem and
+    # the KLInfo_ key or macOS ignores the bundle's metadata. Users see the
+    # localized string keyed on it, which is what belongs in the title.
+    try:
+        text = STRINGS.read_text(encoding='utf-8')
+    except OSError:
+        return internal
+    localized = re.search(rf'"{re.escape(internal)}"\s*=\s*"([^"]*)"', text)
+    return localized.group(1) if localized else internal
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('keylayout', nargs='?', default=LAYOUT)
@@ -177,7 +190,8 @@ def main():
     args = ap.parse_args()
 
     kb = load(args.keylayout)
-    svg = render(kb, kb.get('name') or str(args.keylayout))
+    name = kb.get('name')
+    svg = render(kb, display_name(name) if name else str(args.keylayout))
     out = pathlib.Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(svg, encoding='utf-8')

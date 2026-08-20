@@ -15,7 +15,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 
 XML_NAME = re.compile(r'^[A-Za-z_:][-A-Za-z0-9_:.]*$')
-C0_REF = re.compile(r'&#x00([01][0-9A-Fa-f]);', re.I)
+C0_REF = re.compile(r'&#x00([01][0-9A-Fa-f]);', re.IGNORECASE)
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DTD = ROOT / 'reference' / 'vendor' / 'KeyboardLayout.dtd'
 LAYOUT = ROOT / 'src' / 'Resources' / 'Russian US Punctuation.keylayout'
@@ -25,7 +25,7 @@ def normalize(raw):
     # C0 controls are legal in XML 1.1 but not 1.0, and every validator here
     # speaks only 1.0, so park them in a private-use block. Length is preserved
     # and these live in CDATA, so neither parsing nor validity is affected.
-    src = C0_REF.sub(lambda m: '&#xE0%s;' % m.group(1), raw)
+    src = C0_REF.sub(lambda m: f'&#xE0{m.group(1)};', raw)
     src = src.replace('<?xml version="1.1"', '<?xml version="1.0"')
     return re.sub(r'<!DOCTYPE[^>]*>', '', src)
 
@@ -105,8 +105,8 @@ def check(kb):
 
     # every mapIndex the modifierMap can select needs a keyMap to land on
     for layout in kb.findall('layouts/layout'):
-        mm = kb.find('modifierMap[@id="%s"]' % layout.get('modifiers'))
-        kms = kb.find('keyMapSet[@id="%s"]' % layout.get('mapSet'))
+        mm = kb.find(f'modifierMap[@id="{layout.get("modifiers")}"]')
+        kms = kb.find(f'keyMapSet[@id="{layout.get("mapSet")}"]')
         if mm is None or kms is None:
             continue
         available = {int(k.get('index')) for k in kms.findall('keyMap')}

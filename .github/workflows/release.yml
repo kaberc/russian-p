@@ -35,8 +35,6 @@ jobs:
           mkdir dist
           cp "build/Russian US Punctuation.bundle.zip" \
              "dist/Russian.US.Punctuation.bundle.zip"
-          cp "build/Russian US Punctuation.bundle/Contents/Resources/Russian US Punctuation.keylayout" \
-             "dist/Russian.US.Punctuation.keylayout"
           cp docs/preview.svg "dist/Russian.US.Punctuation.preview.svg"
 
       - name: Publish release
@@ -44,16 +42,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git tag -l --format='%(contents)' "$GITHUB_REF_NAME" > notes.md
-          cat >>notes.md <<'EOF'
-
-          Choose one download:
-
-          - `Russian.US.Punctuation.bundle.zip` for the complete bundle with metadata and localized names
-          - `Russian.US.Punctuation.keylayout` for a standalone layout file
-
-          For the bundle, extract the ZIP and copy `Russian US Punctuation.bundle` to `~/Library/Keyboard Layouts/`, then log out and back in.
-          EOF
           gh release create "$GITHUB_REF_NAME" \
-            --title "Russian (U.S. Punctuation) ${GITHUB_REF_NAME#v}" \
+            --title "Russian – U.S. Punctuation ${GITHUB_REF_NAME#v}" \
             --notes-file notes.md \
             dist/*

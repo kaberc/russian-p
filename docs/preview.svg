@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1784 698" width="1784" height="698" font-family="Helvetica Neue,Helvetica,Arial,DejaVu Sans,sans-serif">
 <rect width="1784" height="698" rx="18" fill="#f6f6f4"/>
-<text x="22" y="52" font-size="26" fill="#1a1a1a">Russian (U.S. Punctuation)</text>
+<text x="22" y="52" font-size="26" fill="#1a1a1a">Russian – U.S. Punctuation</text>
 <text x="1762" y="52" font-size="17" fill="#8a8a8a" text-anchor="end">black = Latin · blue = Cyrillic · pale = Option / Shift-Option · orange = dead key</text>
 <rect x="22" y="78" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="37" y="118" font-size="31" fill="#1a1a1a">~</text>

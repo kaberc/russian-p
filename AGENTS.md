@@ -12,16 +12,14 @@
 
 ## Project goal
 
-Russian (U.S. Punctuation) is a Russian-English bi-layout built around standard
-U.S. key positions rather than conventional full-size keyboard geometry. Keep
+Russian – U.S. Punctuation is a macOS keyboard layout for typing Russian. Keep
 most punctuation on the same positions as the standard U.S. layout while
 placing Russian letters where they are convenient to type.
 
 This should preserve punctuation muscle memory and make the layout practical on
-programmable, non-standard keyboards such as the Moonlander, including boards
-with shorter rows or punctuation keys moved to different physical locations.
-Do not make layout decisions that depend unnecessarily on standard row lengths
-or fixed punctuation-key placement.
+programmable keyboards such as the Moonlander, including boards with shorter
+rows or punctuation keys moved to different physical locations. Keep layout
+decisions independent of row length and of where punctuation keys sit.
 
 ## References
 
@@ -46,3 +44,8 @@ or fixed punctuation-key placement.
   `maxout` value.
 - Preserve Apple ABC punctuation on the base/Shift layers and reachability of all
   33 Russian letters. Option+E is the acute dead key for Russian stress marks.
+- The `<keyboard name>`, the `.keylayout` file stem and the `KLInfo_` key in
+  `Info.plist` must be one identical string. When they disagree macOS silently
+  ignores the whole `KLInfo_` dict and synthesizes its own input source ID from
+  the bundle identifier. The user-visible name is the value in
+  `InfoPlist.strings` keyed on that string, never the `name` attribute itself.

@@ -51,7 +51,7 @@ dead-key idiom:
   and tilde.
 - Spacing terminators U+00B4, U+0060, U+02C6, U+00A8, and U+02DC.
 - `maxout="2"`, with decomposed `J`/`j` + U+0301 where Unicode has no
-  precomposed acute character. Russian (U.S. Punctuation) follows that
+  precomposed acute character. Russian – U.S. Punctuation follows that
   precedent for stressed Russian vowels.
 
 The extraction itself fails DTD validation because several generated XML IDs

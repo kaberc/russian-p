@@ -5,8 +5,6 @@
 <rect x="22" y="78" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="37" y="118" font-size="31" fill="#1a1a1a">~</text>
 <text x="37" y="173" font-size="31" fill="#1a1a1a">`</text>
-<text x="119" y="116" font-size="24" fill="#5b8ec4" text-anchor="end">[</text>
-<text x="119" y="172" font-size="24" fill="#5b8ec4" text-anchor="end">]</text>
 <rect x="138" y="78" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="153" y="118" font-size="31" fill="#1a1a1a">!</text>
 <text x="153" y="173" font-size="31" fill="#1a1a1a">1</text>
@@ -84,7 +82,6 @@
 <rect x="428" y="194" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="443" y="234" font-size="31" fill="#0b5cad">У</text>
 <text x="443" y="289" font-size="31" fill="#0b5cad">у</text>
-<text x="525" y="232" font-size="24" fill="#5b8ec4" text-anchor="end">◌́</text>
 <text x="525" y="288" font-size="24" fill="#c2410c" text-anchor="end">´</text>
 <rect x="544" y="194" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="559" y="234" font-size="31" fill="#0b5cad">К</text>
@@ -215,7 +212,6 @@
 <rect x="863" y="426" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="878" y="466" font-size="31" fill="#0b5cad">Т</text>
 <text x="878" y="521" font-size="31" fill="#0b5cad">т</text>
-<text x="960" y="520" font-size="24" fill="#5b8ec4" text-anchor="end">™</text>
 <rect x="979" y="426" width="110" height="110" rx="11" fill="#ffffff" stroke="#d3d3cd" stroke-width="2"/>
 <text x="994" y="466" font-size="31" fill="#0b5cad">Ь</text>
 <text x="994" y="521" font-size="31" fill="#0b5cad">ь</text>
